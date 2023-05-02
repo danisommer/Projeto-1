@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="projeto 1" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/projeto 1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/projeto 1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="img/teste0-1.rbd" />
+		<Unit filename="img/teste0-2.rbd" />
+		<Unit filename="img/teste0-4.rbd" />
+		<Unit filename="img/teste1-1.bmp" />
+		<Unit filename="img/teste1-1.rbd" />
+		<Unit filename="img/teste1-2.bmp" />
+		<Unit filename="img/teste1-2.rbd" />
+		<Unit filename="img/teste1-4.bmp" />
+		<Unit filename="img/teste1-4.rbd" />
+		<Unit filename="img/teste1.bmp" />
+		<Unit filename="img/teste2-1.bmp" />
+		<Unit filename="img/teste2-1.rbd" />
+		<Unit filename="img/teste2-2.bmp" />
+		<Unit filename="img/teste2-2.rbd" />
+		<Unit filename="img/teste2-4.bmp" />
+		<Unit filename="img/teste2-4.rbd" />
+		<Unit filename="img/teste2.bmp" />
+		<Unit filename="img/teste3-1.bmp" />
+		<Unit filename="img/teste3-1.rbd" />
+		<Unit filename="img/teste3-2.bmp" />
+		<Unit filename="img/teste3-2.rbd" />
+		<Unit filename="img/teste3-4.bmp" />
+		<Unit filename="img/teste3-4.rbd" />
+		<Unit filename="img/teste3.bmp" />
+		<Unit filename="t1-pacote/imagem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="t1-pacote/imagem.h" />
+		<Unit filename="t1-pacote/main_decodifica.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="t1-pacote/t1-2582708.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="t1-pacote/trabalho1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="t1-pacote/trabalho1.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
