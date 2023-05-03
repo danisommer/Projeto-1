@@ -11,9 +11,9 @@
 
 /*============================================================================*/
 
-#define ARQUIVO_IMG "img/teste3.bmp" /* Imagem para teste. */
+#define ARQUIVO_IMG "img/teste3-4.bmp" /* Imagem para teste. */
 #define ARQUIVO_RBD "img/teste3-4.rbd" /* Saída codificada. */
-#define BPP 4 /* Precisa ser 1, 2 ou 4. */
+#define BPP 1 /* Precisa ser 1, 2 ou 4. */
 
 /*============================================================================*/
 

@@ -1,15 +1,45 @@
 #include "trabalho1.h"
 
-/*============================================================================*/
-/* Funções do trabalho. */
+void codificaStreamImagem (int n_bits){ //n_bits deve ser 4, 2 ou 1
 
-void codificaStreamImagem (int n_bits){}
-void decodificaStreamRBD (int n_bits, int preenche){}
+    int numero, pixel, aux;
 
-/*----------------------------------------------------------------------------*/
-/* Funções auxiliares que DEVEM ser chamadas pelos alunos. */
+    while (aux != 0xFFFFFFFF)
+    {
+        numero = 0x00;
+        for(int i=0; i < 8/n_bits; i++)
+        {
+            pixel = pegaProximoPixel();
+            aux = pixel;
 
-unsigned int pegaProximoPixel ();
+            pixel = pixel >> (8-n_bits);
+            pixel = pixel << (8-n_bits);
+            pixel = pixel >> (n_bits*i);
+            pixel = pixel | numero;
+            numero = pixel;
+
+        }
+        enviaByteRBD(pixel);
+    }
+
+}
+void decodificaStreamRBD (int n_bits, int preenche){
+
+
+
+
+
+
+
+
+
+
+}
+
+/*
+
 void enviaPixel (unsigned char pixel);
 unsigned int pegaProximoByteRBD ();
-void enviaByteRBD (unsigned char byte);
+
+
+*/

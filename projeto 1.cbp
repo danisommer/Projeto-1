@@ -59,7 +59,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="t1-pacote/imagem.h" />
-		<Unit filename="t1-pacote/main_decodifica.c">
+		<Unit filename="t1-pacote/main_codifica.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="t1-pacote/t1-2582708.c">
