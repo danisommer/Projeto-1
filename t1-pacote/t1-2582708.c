@@ -6,17 +6,16 @@
 /*                                                                            */
 /*============================================================================*/
 
-
 #include "trabalho1.h"
 
 void codificaStreamImagem (int n_bits)
 {
 
-    int numero, pixel, aux;
+    int pixel, aux, numero;
 
     while (aux != 0xFFFFFFFF)
     {
-        numero = 0x00; //numero para comparação.
+        numero = 0xFF; //numero para comparação.
         for(int i=0; i < 8/n_bits; i++) //o processo de formação de um byte varia conforme o valor de n_bits. Quanto maior for n_bits, menos repetições serão necessárias para obter o byte.
         {
             pixel = pegaProximoPixel();
@@ -29,15 +28,31 @@ void codificaStreamImagem (int n_bits)
             numero = pixel;
 
         }
-        enviaByteRBD(pixel); //envia o pixel final para ser implementado.
+        enviaByteRBD(pixel); //envia o byte final para ser implementado.
     }
 
 }
 void decodificaStreamRBD (int n_bits, int preenche)
 {
+    int byte, aux, copiaByte, posicao;
 
-    enviaPixel (); //inserir char
-    pegaProximoByteRBD (); //== int
+    while (aux != 0xFFFFFFFF)
+    {
 
+        byte = pegaProximoByteRBD();
+        aux = byte; //repete o mesmo processo da função acima.
+        posicao=1;
 
+        for(int i=0; i < 8/n_bits; i++)
+        {
+
+            copiaByte = byte; //coleta uma cópia do byte para não haver perda de dados
+
+            copiaByte = copiaByte >> 8-n_bits*posicao; //desloca os bits de acordo com n_bits e a posição deles no byte (j define essa posição).
+            copiaByte = copiaByte << 8-n_bits; //desloca os bits de acordo com n_bits, apenas.
+
+            enviaPixel(copiaByte); //envia o pixel final para ser implementado.
+            posicao++; //vai para a posição do próximo fragmento.
+        }
+    }
 }
