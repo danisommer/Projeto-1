@@ -20,7 +20,7 @@ void codificaStreamImagem (int n_bits)
             pixel = pegaProximoPixel();
             aux = pixel;                                          //guarda o valor original de 'pixel' para poder utilizá-lo no encerramento do loop (aux != 0xFFFFFFFF), sem ser prejudicado pela manipulação da variável "pixel".
 
-            if (pixel >= 0x7f && n_bits == 1)                     //corrige um bug que deixava as imagens de n_bits 1 totalmente pretas.
+            if (pixel == 0x7f && n_bits == 1)                     //corrige um bug que deixava as imagens de n_bits 1 totalmente pretas.
                 pixel = 0xff;
 
             pixel = pixel >> (8-n_bits);
