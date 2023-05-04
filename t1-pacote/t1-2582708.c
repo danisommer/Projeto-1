@@ -19,10 +19,6 @@ void codificaStreamImagem (int n_bits)
         {
             pixel = pegaProximoPixel();
             aux = pixel;                                          //guarda o valor original de 'pixel' para poder utilizá-lo no encerramento do loop (aux != 0xFFFFFFFF), sem ser prejudicado pela manipulação da variável "pixel".
-
-            if (pixel == 0x7f && n_bits == 1)                     //corrige um bug que deixava as imagens de n_bits 1 totalmente pretas.
-                pixel = 0xff;
-
             pixel = pixel >> (8-n_bits);
             pixel = pixel << (8-n_bits);                          //desloca o pixel para que todos os valores fora do número máximo delimitado por n_bits seja transformado em 0.
             pixel = pixel >> (n_bits*i);                          //desloca o pixel para que não haja uma mistura entre os bits de cada pixel na hora que for juntá-los.
@@ -42,14 +38,11 @@ void decodificaStreamRBD (int n_bits, int preenche)
         byte = pegaProximoByteRBD();
         aux = byte;                                                 //repete o mesmo processo da função acima.
         posicao = 1;                                                //posição é reiniciada.
-
         for(int i=0; i < 8/n_bits; i++)
         {
             copiaByte = byte;                                       //coleta uma cópia do byte para não haver perda de dados.
-
             copiaByte = copiaByte >> (8-n_bits*posicao);            //desloca os bits de acordo com n_bits e a posição deles no byte.
             copiaByte = copiaByte << (8-n_bits);                    //desloca os bits de acordo com n_bits, apenas.
-
             enviaPixel(copiaByte);                                  //envia o pixel final para ser implementado.
             posicao++;                                              //vai para a posição do próximo fragmento.
         }
